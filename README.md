@@ -73,19 +73,19 @@ To create a CSV importer for Google Sheets that allows users to drag and drop CS
 High-Level Steps:
 Google Apps Script Functions:
 
-onOpen():
 
+onOpen():
 Create a menu in the Google Sheet for CSV Import.
 Add an option to trigger the CSV Import dialog.
-showDialog():
 
+showDialog():
 Create and display an HTML dialog for CSV import.
 Set the width and height of the dialog.
+
 parseCSV(csvData):
-
 Parse CSV data and return the header row.
-getSheetNames():
 
+getSheetNames():
 Get the names of all sheets in the active spreadsheet.
 importCSV(csvData, selectedColumns, filter, destinationSheet):
 
@@ -93,55 +93,59 @@ Parse CSV data.
 Apply filters if specified.
 Determine the destination sheet (create a new one if needed).
 For each selected column, create a new column in the destination sheet and import the corresponding data.
-HTML File:
 
+HTML File:
 Create an HTML file for the CSV import dialog.
 Include input elements for file selection, column selection, filter input, and destination sheet selection.
 Buttons to trigger loading CSV data and importing.
+
 JavaScript Functions:
 
 updateColumnsList(columns):
-
 Update the columns dropdown with the provided list of columns.
+
 updateSheetList(sheets):
-
 Update the destination sheet dropdown with the provided list of sheets.
-loadCSV():
 
+loadCSV():
 Triggered when the user selects a CSV file.
 Read the CSV file using FileReader.
 Call parseCSV and getSheetNames functions in Google Apps Script.
 Update the UI with columns and sheet names.
+
 importCSV():
-
 Triggered when the user clicks the "Import" button.
+
 Get selected columns, filter, destination sheet, and CSV file.
+
 Read the CSV file using FileReader.
+
 Call the importCSV function in Google Apps Script with the selected parameters.
+
 toggleLoader(show):
-
 Toggle a loading indicator based on the show parameter.
-Additional Considerations:
-Error Handling:
 
+Additional Considerations:
+
+Error Handling:
 Add error handling to handle potential issues during file reading, parsing, or importing.
 Display meaningful error messages to users.
-User Feedback:
 
+User Feedback:
 Consider adding notifications or alerts to inform users of successful imports or any errors.
 Optimization:
 
 Optimize the code to handle large CSV files efficiently.
 Test the solution with various file sizes to ensure performance.
-Usability:
 
+Usability:
 Ensure the UI is user-friendly and intuitive.
 Test the solution with different users to gather feedback on usability.
-Code Organization:
 
+Code Organization:
 Keep the code modular and well-organized.
 Use meaningful variable and function names for better readability.
-Testing:
 
+Testing:
 Perform thorough testing with various scenarios, including different file formats, column selections, and filter conditions.
 By following this approach, we can create a robust and user-friendly CSV importer for Google Sheets that addresses the pain points mentioned in the problem statement.
